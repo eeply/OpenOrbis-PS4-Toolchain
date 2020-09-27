@@ -2,34 +2,34 @@
 #define _SCE_MOVE_H_
 
 #include <stdint.h>
+#include <orbis/_types/move.h>
 
 #ifdef __cplusplus 
 extern "C" {
 #endif
 
-
-// Empty Comment
-void sceMoveClose();
-// Empty Comment
-void sceMoveGetDeviceInfo();
+// Close move controller handle
+int sceMoveClose(int handle);
+// Get move controller device info
+void sceMoveGetDeviceInfo(int handle, void *data);
 // Empty Comment
 void sceMoveGetExtensionPortInfo();
 // Empty Comment
-void sceMoveInit();
+void sceMoveInit(void);
 // Empty Comment
-void sceMoveOpen();
+int sceMoveOpen(int userID, int type, int index);
 // Empty Comment
-void sceMoveReadStateLatest();
+int sceMoveReadStateLatest(int handle, OrbisMoveData *data);
 // Empty Comment
 void sceMoveReadStateRecent();
 // Empty Comment
 void sceMoveResetLightSphere();
 // Empty Comment
 void sceMoveSetExtensionPortOutput();
-// Empty Comment
-void sceMoveSetLightSphere();
-// Empty Comment
-void sceMoveSetVibration();
+// Set Sphere color in rgb
+int sceMoveSetLightSphere(int handle, uint8_t r, uint8_t g, uint8_t b);
+// Intensity of vibration from 0 to 255
+int sceMoveSetVibration(int handle, uint8_t intensity);
 // Empty Comment
 void sceMoveTerm();
 
