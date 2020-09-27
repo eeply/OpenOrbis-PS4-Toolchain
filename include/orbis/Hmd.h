@@ -7,18 +7,36 @@
 extern "C" {
 #endif
 
+typedef struct OrbisHmdInitializeParams {
+  void* unknown1;
+  uint8_t unknown2[8];
+} OrbisHmdInitializeParams;
+
+typedef struct OrbisHmdDeviceInformation {
+  uint32_t status;
+  uint32_t userId;
+  uint8_t unknown1[4];
+  uint32_t panelWidth;
+  uint32_t panelHeight;
+  uint16_t latencyRefresh90Hz;
+  uint16_t latencyRefresh120Hz;
+  uint8_t mounted;
+  uint8_t unknown2[7];
+} OrbisHmdDeviceInformation;
+
+
 // Empty Comment
 void sceHmdClose();
 // Empty Comment
 void sceHmdGet2DEyeOffset();
-// Empty Comment
-void sceHmdGetDeviceInformation();
+// Get Hmd device information
+int sceHmdGetDeviceInformation(void *params);
 // Empty Comment
 void sceHmdGetDeviceInformationByHandle();
 // Empty Comment
 void sceHmdGetFieldOfView();
-// Empty Comment
-void sceHmdInitialize();
+// Initialize Hmd
+int sceHmdInitialize(void *params);
 // Empty Comment
 void sceHmdInternal3dAudioOpen();
 // Empty Comment
@@ -89,8 +107,8 @@ void sceHmdInternalSocialScreenGetFadeState();
 void sceHmdInternalSocialScreenSetFadeAndSwitch();
 // Empty Comment
 void sceHmdInternalSocialScreenSetOutput();
-// Empty Comment
-void sceHmdOpen();
+// Open handle to Hmd
+int sceHmdOpen(int userID, int type, int index, void *params);
 // Empty Comment
 void sceHmdReprojectionAddDisplayBuffer();
 // Empty Comment
