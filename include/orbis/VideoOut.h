@@ -11,17 +11,6 @@
 extern "C" {
 #endif
 
-typedef struct OrbisVideoOutMode {
-  uint32_t size;
-  uint8_t encoding;
-  uint8_t range;
-  uint8_t colors;
-  uint8_t depth;
-  uint64_t refreshRate;
-  uint64_t resolution;
-  uint8_t unknown[8];
-} OrbisVideoOutMode;
-
 int sceVideoOutOpen(OrbisUserServiceUserId, int, int, const void *);
 int sceVideoOutClose(int);
 // need to port sceVideoOutBufferAttribute (last arg)

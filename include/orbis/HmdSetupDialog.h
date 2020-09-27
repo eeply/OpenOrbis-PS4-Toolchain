@@ -15,7 +15,7 @@ void sceHmdSetupDialogGetResult();
 // Empty Comment
 void sceHmdSetupDialogGetStatus();
 // Empty Comment
-void sceHmdSetupDialogInitialize();
+int sceHmdSetupDialogInitialize();
 // Empty Comment
 void sceHmdSetupDialogOpen();
 // Empty Comment

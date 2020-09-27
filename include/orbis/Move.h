@@ -15,7 +15,7 @@ void sceMoveGetDeviceInfo(int handle, void *data);
 // Empty Comment
 void sceMoveGetExtensionPortInfo();
 // Empty Comment
-void sceMoveInit(void);
+int sceMoveInit(void);
 // Empty Comment
 int sceMoveOpen(int userID, int type, int index);
 // Empty Comment
